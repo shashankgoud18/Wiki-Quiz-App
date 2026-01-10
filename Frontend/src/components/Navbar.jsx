@@ -2,20 +2,17 @@ import { NavLink, Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/80 border-b border-white/10 shadow-lg shadow-black/10">
-      <div className="max-w-7xl mx-auto px-4 py-4">
+    <header className="sticky top-0 z-50 backdrop-blur-sm bg-white/80 border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="group flex items-center gap-3 hover:opacity-80 transition">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-500 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition"></div>
-              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white font-bold text-lg shadow-xl">
-                Q
-              </div>
+          <Link to="/" className="group flex items-center gap-3 hover:opacity-90 transition">
+            <div className="w-10 h-10 rounded-xl bg-gray-900 text-white flex items-center justify-center font-bold text-lg ring-1 ring-gray-200">
+              Q
             </div>
             <div>
-              <div className="text-lg font-bold text-white">AI Wiki Quiz</div>
-              <div className="text-xs text-slate-400">Powered by AI</div>
+              <div className="text-lg font-bold text-gray-900">AI Wiki Quiz</div>
+              <div className="text-xs text-gray-500">Wikipedia → Quiz</div>
             </div>
           </Link>
 
@@ -25,10 +22,10 @@ function Navbar() {
               to="/"
               end
               className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                `px-4 py-2 rounded-lg text-sm font-medium transition ${
                   isActive
-                    ? 'bg-white/10 text-white shadow-lg'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    ? 'bg-gray-100 text-gray-900'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`
               }
             >
@@ -37,10 +34,10 @@ function Navbar() {
             <NavLink
               to="/generate"
               className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                `px-4 py-2 rounded-lg text-sm font-medium transition ${
                   isActive
-                    ? 'bg-white/10 text-white shadow-lg'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    ? 'bg-gray-100 text-gray-900'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`
               }
             >
@@ -49,10 +46,10 @@ function Navbar() {
             <NavLink
               to="/history"
               className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                `px-4 py-2 rounded-lg text-sm font-medium transition ${
                   isActive
-                    ? 'bg-white/10 text-white shadow-lg'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    ? 'bg-gray-100 text-gray-900'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`
               }
             >
@@ -61,10 +58,10 @@ function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                `px-4 py-2 rounded-lg text-sm font-medium transition ${
                   isActive
-                    ? 'bg-white/10 text-white shadow-lg'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    ? 'bg-gray-100 text-gray-900'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`
               }
             >
@@ -75,7 +72,7 @@ function Navbar() {
           {/* CTA Button */}
           <Link
             to="/generate"
-            className="hidden md:block px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-semibold shadow-lg shadow-blue-500/30 transition-all hover:scale-105"
+            className="hidden md:block px-5 py-2.5 rounded-lg bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold shadow-sm transition"
           >
             Create Quiz
           </Link>

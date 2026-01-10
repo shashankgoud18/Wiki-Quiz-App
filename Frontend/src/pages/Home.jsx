@@ -2,113 +2,76 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   return (
-    <div className="space-y-20">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative">
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
-          <div className="space-y-8 relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-500/20 to-teal-500/20 text-blue-200 border border-blue-500/30 backdrop-blur">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
-              Powered by AI
-            </div>
-            
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Transform <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">Wikipedia</span> into Interactive Quizzes
+      <section className="pt-16 pb-24 lg:pt-24 lg:pb-32">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center space-y-6 max-w-3xl mx-auto mb-16">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              Turn any Wikipedia article into a quiz
             </h1>
             
-            <p className="text-xl text-slate-300 max-w-2xl leading-relaxed">
-              Paste any Wikipedia URL and let AI generate engaging quizzes with explanations, 
-              difficulty levels, and instant feedback. Perfect for learning and interview prep.
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Paste a link, get instant quizzes. Learn faster with AI-generated questions 
+              and detailed explanations.
             </p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
               <Link
                 to="/generate"
-                className="group px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold shadow-xl shadow-blue-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/40"
+                className="px-7 py-3.5 rounded-lg bg-gray-900 text-white hover:bg-gray-800 font-medium transition-colors"
               >
-                <span className="flex items-center gap-2">
-                  Start Creating
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
+                Create your first quiz →
               </Link>
               <Link
                 to="/history"
-                className="px-8 py-4 rounded-xl border-2 border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold backdrop-blur transition-all hover:border-white/30"
+                className="px-7 py-3.5 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium transition-colors"
               >
-                Browse History
+                View history
               </Link>
-            </div>
-            
-            <div className="flex flex-wrap items-center gap-6 text-sm">
-              <div className="flex items-center gap-2 text-slate-300">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <span>AI Powered</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-teal-600/20 border border-teal-500/30 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <span>Instant Results</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <span>Detailed Explanations</span>
-              </div>
             </div>
           </div>
 
-          {/* Preview Card */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-3xl blur-3xl"></div>
-            <div className="relative rounded-2xl border border-white/10 bg-slate-950/80 backdrop-blur-xl p-8 shadow-2xl">
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-sm font-semibold text-slate-300">Live Preview</span>
+          {/* Visual Demo */}
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+              <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center gap-2">
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-gray-300"></div>
+                  <div className="w-3 h-3 rounded-full bg-gray-300"></div>
+                  <div className="w-3 h-3 rounded-full bg-gray-300"></div>
                 </div>
+                <span className="ml-2 text-sm text-gray-500">Quiz Preview</span>
               </div>
               
-              <div className="space-y-4">
-                <div className="p-5 rounded-xl bg-gradient-to-br from-blue-500/10 to-teal-500/10 border border-blue-500/30">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center text-2xl">
-                      🧠
-                    </div>
+              <div className="p-6 space-y-4">
+                <div className="flex items-center justify-between p-4 rounded-lg bg-gray-50">
+                  <div className="flex items-center gap-3">
+                    <div className="text-2xl">📚</div>
                     <div>
-                      <div className="text-base font-bold text-white">Artificial Intelligence</div>
-                      <div className="text-xs text-slate-400">10 questions • Medium</div>
+                      <div className="font-semibold text-gray-900">Quantum Computing</div>
+                      <div className="text-sm text-gray-500">8 questions</div>
                     </div>
                   </div>
+                  <span className="px-3 py-1 rounded-md bg-yellow-100 text-yellow-800 text-xs font-medium">
+                    Medium
+                  </span>
                 </div>
                 
-                <div className="p-5 rounded-xl bg-white/5 border border-white/10 space-y-4">
+                <div className="p-5 rounded-lg border border-gray-200 bg-gray-50">
                   <div className="flex items-start gap-3">
-                    <div className="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm flex-shrink-0">
+                    <div className="w-7 h-7 rounded-md bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-700 flex-shrink-0">
                       1
                     </div>
-                    <div className="flex-1">
-                      <p className="text-white font-medium mb-3">What is machine learning?</p>
+                    <div className="flex-1 space-y-3">
+                      <p className="text-gray-900 font-medium">What is a qubit in quantum computing?</p>
                       <div className="space-y-2">
-                        {['A subset of AI', 'A programming language', 'A database system', 'An operating system'].map((opt, i) => (
-                          <div key={i} className={`p-3 rounded-lg border transition-all ${i === 0 ? 'border-blue-500/50 bg-blue-500/10' : 'border-white/10 bg-white/5'}`}>
-                            <span className={`text-sm ${i === 0 ? 'text-blue-300' : 'text-slate-300'}`}>{opt}</span>
+                        <div className="p-3 rounded-lg bg-blue-50 border border-blue-200">
+                          <span className="text-sm text-gray-900">The quantum equivalent of a classical bit</span>
+                        </div>
+                        {['A quantum computer brand', 'A measurement unit'].map((opt, i) => (
+                          <div key={i} className="p-3 rounded-lg bg-white border border-gray-200">
+                            <span className="text-sm text-gray-600">{opt}</span>
                           </div>
                         ))}
                       </div>
@@ -119,95 +82,207 @@ function Home() {
             </div>
           </div>
         </div>
-        
-        {/* Background decoration */}
-        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-20 lg:py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center space-y-3 mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">How it works</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Three simple steps to start learning
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                step: '1',
+                title: 'Paste a Wikipedia URL',
+                description: 'Copy any Wikipedia article link and paste it into our generator. Works with any topic.',
+              },
+              {
+                step: '2',
+                title: 'AI generates questions',
+                description: 'Our AI analyzes the article and creates relevant questions with different difficulty levels.',
+              },
+              {
+                step: '3',
+                title: 'Take quiz & learn',
+                description: 'Answer questions and get instant feedback with detailed explanations for every answer.',
+              }
+            ].map((item, i) => (
+              <div key={i} className="space-y-4">
+                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white font-bold">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 lg:py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center space-y-3 mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">Why use Wiki Quiz?</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              A better way to learn from Wikipedia
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Active learning',
+                description: 'Testing yourself is proven to be more effective than just reading. Turn passive content into active practice.',
+                icon: '🎯'
+              },
+              {
+                title: 'Instant feedback',
+                description: 'Get explanations for every answer immediately. Learn from your mistakes right away.',
+                icon: '⚡'
+              },
+              {
+                title: 'Interview prep',
+                description: 'Great for preparing for interviews, exams, or learning new topics quickly.',
+                icon: '💼'
+              },
+              {
+                title: 'Different difficulty levels',
+                description: 'Questions range from easy to hard, so you can challenge yourself appropriately.',
+                icon: '📊'
+              },
+              {
+                title: 'Save time',
+                description: 'Generate quizzes instantly instead of spending hours creating questions manually.',
+                icon: '⏱️'
+              },
+              {
+                title: 'Track your progress',
+                description: 'See all your past quizzes and scores. Review anytime you want.',
+                icon: '📈'
+              }
+            ].map((benefit, i) => (
+              <div key={i} className="space-y-3">
+                <div className="text-3xl">{benefit.icon}</div>
+                <h3 className="text-lg font-semibold text-gray-900">{benefit.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Features Section */}
-      <section className="space-y-8">
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">Everything you need to learn better</h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Powerful features designed to make learning engaging and effective
-          </p>
-        </div>
-        
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              icon: '🎯',
-              title: 'Smart Generation',
-              description: 'AI analyzes Wikipedia articles and creates relevant, challenging questions automatically',
-              color: 'from-blue-500/20 to-blue-600/20 border-blue-500/30'
-            },
-            {
-              icon: '📊',
-              title: 'Instant Feedback',
-              description: 'Get detailed explanations for every answer, right and wrong, to learn as you go',
-              color: 'from-teal-500/20 to-teal-600/20 border-teal-500/30'
-            },
-            {
-              icon: '📈',
-              title: 'Track Progress',
-              description: 'View your quiz history, scores, and performance trends over time',
-              color: 'from-purple-500/20 to-purple-600/20 border-purple-500/30'
-            },
-            {
-              icon: '⚡',
-              title: 'Lightning Fast',
-              description: 'Generate quizzes in seconds with our optimized AI pipeline',
-              color: 'from-yellow-500/20 to-yellow-600/20 border-yellow-500/30'
-            },
-            {
-              icon: '🎨',
-              title: 'Beautiful UI',
-              description: 'Clean, modern interface designed for distraction-free learning',
-              color: 'from-pink-500/20 to-pink-600/20 border-pink-500/30'
-            },
-            {
-              icon: '🔒',
-              title: 'Your Data',
-              description: 'All your quizzes and progress stored securely in our database',
-              color: 'from-green-500/20 to-green-600/20 border-green-500/30'
-            }
-          ].map((feature, i) => (
-            <div
-              key={i}
-              className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all hover:scale-105 hover:shadow-xl"
-            >
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-3xl mb-4`}>
-                {feature.icon}
+      <section className="py-20 lg:py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+                  Everything you need
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Features designed to help you learn better and faster
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-              <p className="text-slate-300 text-sm leading-relaxed">{feature.description}</p>
+
+              <div className="space-y-5">
+                {[
+                  {
+                    title: 'AI-powered questions',
+                    description: 'Questions are automatically generated based on the article content'
+                  },
+                  {
+                    title: 'Cached for speed',
+                    description: 'Quizzes are saved so you can retake them anytime'
+                  },
+                  {
+                    title: 'Detailed explanations',
+                    description: 'Learn why each answer is correct or incorrect'
+                  },
+                  {
+                    title: 'Related topics',
+                    description: 'Discover similar articles to continue learning'
+                  }
+                ].map((feature, i) => (
+                  <div key={i} className="flex gap-3">
+                    <svg className="w-6 h-6 text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">{feature.title}</h3>
+                      <p className="text-gray-600 text-sm mt-0.5">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+
+            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+                  <span className="text-sm text-gray-600">Question 3 of 8</span>
+                  <span className="text-sm text-green-600 font-medium">2/2 correct</span>
+                </div>
+                
+                <div className="space-y-4">
+                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-yellow-100 text-yellow-800">
+                    Medium
+                  </span>
+                  
+                  <p className="text-gray-900 font-medium">
+                    Who developed the theory of general relativity?
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <div className="p-3 rounded-lg bg-green-50 border border-green-200">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-900">Albert Einstein</span>
+                        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                    </div>
+                    {['Isaac Newton', 'Stephen Hawking'].map((opt, i) => (
+                      <div key={i} className="p-3 rounded-lg bg-gray-50 border border-gray-200 opacity-60">
+                        <span className="text-sm text-gray-600">{opt}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="p-3 rounded-lg bg-blue-50 border border-blue-200">
+                    <p className="text-sm text-gray-700">
+                      Correct! Einstein published his theory in 1915, revolutionizing physics.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/10 via-transparent to-teal-500/10 p-12 text-center">
-        <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white">Ready to start learning?</h2>
-          <p className="text-xl text-slate-300">
-            Create your first quiz in seconds. No sign-up required.
+      <section className="py-20 lg:py-24">
+        <div className="max-w-3xl mx-auto px-6 text-center space-y-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
+            Ready to get started?
+          </h2>
+          <p className="text-xl text-gray-600">
+            Create your first quiz in seconds. No sign-up needed.
           </p>
           <Link
             to="/generate"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-bold shadow-xl transition-all hover:scale-105"
+            className="inline-block px-7 py-3.5 rounded-lg bg-gray-900 text-white hover:bg-gray-800 font-medium transition-colors"
           >
-            Generate Your First Quiz
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
+            Create a quiz →
           </Link>
         </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
       </section>
     </div>
   )
