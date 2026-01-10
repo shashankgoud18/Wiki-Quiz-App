@@ -5,5 +5,4 @@ pymysql
 python-dotenv
 requests
 beautifulsoup4
-langchain
-langchain-google-genai
+google-genai

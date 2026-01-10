@@ -2,39 +2,39 @@ import requests
 from bs4 import BeautifulSoup
 from app.utils.text_cleaner import clean_text
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120.0.0.0 Safari/537.36"
-    )
-}
+HEADERS = {"User-Agent": "Mozilla/5.0"}
 
 def scrape_wikipedia(url: str) -> dict:
-    res = requests.get(url, headers=HEADERS, timeout=15)
-    res.raise_for_status()
+    """Scrape Wikipedia article and extract title, content, and sections"""
+    try:
+        res = requests.get(url, headers=HEADERS, timeout=15)
+        res.raise_for_status()
+    except requests.RequestException as e:
+        raise ValueError(f"Failed to fetch URL: {str(e)}")
 
     soup = BeautifulSoup(res.text, "html.parser")
 
+    # Extract title
     title_tag = soup.find("h1")
     if not title_tag:
-        raise ValueError("Failed to extract article title")
-
+        raise ValueError("Could not find article title")
     title = title_tag.get_text(strip=True)
 
+    # Extract main content paragraphs
     paragraphs = soup.select("div.mw-parser-output > p")
-    raw_text = " ".join(
-        p.get_text(strip=True)
-        for p in paragraphs
-        if p.get_text(strip=True)
-    )
+    text = " ".join(p.get_text() for p in paragraphs if p.get_text(strip=True))
+    
+    if not text or len(text.strip()) < 100:
+        raise ValueError("Article content is too short or empty")
 
-    if len(raw_text) < 500:
-        raise ValueError("Article content too small to generate quiz")
-
-    cleaned = clean_text(raw_text)
+    # Extract section headings
+    sections = [
+        h.get_text(strip=True)
+        for h in soup.select("span.mw-headline")
+    ]
 
     return {
         "title": title,
-        "content": cleaned[:15000]  # token safety
+        "content": clean_text(text[:8000]),
+        "sections": sections[:10]
     }
