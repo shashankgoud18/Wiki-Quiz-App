@@ -30,7 +30,7 @@ def generate_quiz_llm(prompt: str) -> str:
     """Generate content using Gemini LLM."""
     client = _get_client()
     response = client.models.generate_content(
-        model="models/gemini-3-flash",
+        model="models/gemini-2.5-flash",
         contents=prompt,
         config=types.GenerateContentConfig(
             temperature=0.3,
